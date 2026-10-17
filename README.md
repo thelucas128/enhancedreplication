@@ -7,18 +7,18 @@
 <h1 align="center">Nodeal Enhanced Replication</h1>
 
 <p align="center">
-  <strong>Custom character replication for Roblox</strong> Â· Built for <a href="https://github.com/nodeal-framework">Nodeal Framework</a> Â· <a href="https://www.nodeal.dev/packages/enhancedrep">enhancedrep v1.1</a>
+  <strong>Custom character replication for Roblox</strong> | Built for <a href="https://github.com/nodeal-framework">Nodeal Framework</a> | <a href="https://www.nodeal.dev/packages/enhancedrep">enhancedrep v1.1</a>
 </p>
 
 ---
 
-## âš¡ Quick stats
+## Stats
 
 | Metric | Value |
 |--------|-------|
 | ECS components | 6 (Position, Velocity, Rotation, Timestamp, Owner, JecsCharacter) |
 | NetworkService networks | 2 (EntitySync, Loaded) |
-| Capsule dimensions | 2.63 Ã— 5.64 Ã— 2.63 studs |
+| Capsule dimensions | 2.63 x 5.64 x 2.63 studs |
 | Capsule mesh | `73706483794360` |
 | Client sync cadence | Every `PostSimulation` |
 | Server drive cadence | Every `PreSimulation` |
@@ -35,20 +35,20 @@ Replaces Roblox's default character replication for lower latency.
 - **Server:** tracks each player as a [jecs](https://github.com/Ukendio/jecs) ECS entity (`Position` / `Velocity` / `Rotation` / `Timestamp` / `Owner`), clones the Capsule into the character as `CapsuleReplication`, and drives it in `PreSimulation`
 - **Handshake:** `Loaded` event gates replication until the client signals ready
 
-The Capsule overwrites Roblox's default â€” instance and code are split below.
+The Capsule overwrites Roblox's default - instance and code are split below.
 
 ---
 
 ## Install
 
-**Nodeal** â€” package ID `enhancedrep`.
+**Nodeal** - package ID `enhancedrep`.
 
 - **Full drag-drop:** `assets/enhancedrep/enhancedReplication.rbxmx`
 - **Or rebuild the hierarchy:** ModuleScript `enhancedReplication` with children `jecs` (`src/enhancedrep/jecs.luau`) + `Capsule` (`assets/enhancedrep/Capsule.rbxmx`), source from `src/enhancedrep/init.luau`
 
-Hierarchy must stay `enhancedReplication` with children `jecs` + `Capsule` â€” code does `require(script.jecs)` and `script.Capsule:Clone()`.
+Hierarchy must stay `enhancedReplication` with children `jecs` + `Capsule` - code does `require(script.jecs)` and `script.Capsule:Clone()`.
 
-Capsule `MeshPart`: mesh `73706483794360`, 2.63 Ã— 5.64 Ã— 2.63, Transparency 0.5, Anchored, `CanCollide` off, Massless.
+Capsule `MeshPart`: mesh `73706483794360`, 2.63 x 5.64 x 2.63, Transparency 0.5, Anchored, `CanCollide` off, Massless.
 
 ---
 
@@ -65,4 +65,4 @@ Capsule `MeshPart`: mesh `73706483794360`, 2.63 Ã— 5.64 Ã— 2.63, Transpare
 
 ## License
 
-MIT â€” see source files for original code.
+MIT - see source files for original code.
